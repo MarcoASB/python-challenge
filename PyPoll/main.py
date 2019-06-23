@@ -16,7 +16,7 @@ def profile_per_candidate(dataset, total_votes):
             if rows[2] == name:
                 votes_number +=1
                 lcandidate['stats'][name] = [votes_number]
-                lcandidate['stats'][name].append(100 * votes_number/total_votes)
+                lcandidate['stats'][name].append(votes_number/total_votes*100)
                 lcandidate['stats'][name].append(0)
         votes_number = 0
     
@@ -24,9 +24,6 @@ def profile_per_candidate(dataset, total_votes):
     for c in lcandidate['stats']:
         if lcandidate['stats'][c][0] > winner:
             winner = lcandidate['stats'][c][0]
-            lcandidate['stats'][c][2] = 1
-        else:
-            lcandidate['stats'][c][2] = 0
     return lcandidate
 
 def poll_results():
@@ -52,7 +49,7 @@ def poll_results():
         
         #Print out Election Results
         print("")
-        print(f"{election_results['headers'][0]}\n{election_results['headers'][1]}")
+        print(f"   {election_results['headers'][0]}\n{election_results['headers'][1]}")
         print(f"{election_results['labels'][0]}: {election_results['votes']}")
         print(f"{election_results['headers'][1]}")
         for candidate in election_results['candidates']['stats']:
@@ -60,7 +57,7 @@ def poll_results():
         print(f"{election_results['headers'][1]}")
         for winner in election_results['candidates']['stats']:
             if int(election_results['candidates']['stats'][winner][2]) == 1:
-                print(f"      {election_results['labels'][1]}: {winner}  ")
+                print(f"           {election_results['labels'][1]}: {winner}  ")
                 break
         print("")
 
