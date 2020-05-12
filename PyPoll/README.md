@@ -15,6 +15,6 @@
   Winner: Khan
   -------------------------
   ```
-
+![Vote-Counting](../Images/Vote_counting.png)
 
 
