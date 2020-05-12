@@ -1,4 +1,4 @@
-## PyBank
+## PyBank   :bank:
 
 * Python script for analyzing the financial records of a company. 
 
@@ -12,7 +12,7 @@
 
   * The greatest decrease in losses (date and amount) over the entire period
 
-## PyPoll
+## PyPoll    :office:
 
 * Python script that analyzes the votes and calculates each of the following:
 
